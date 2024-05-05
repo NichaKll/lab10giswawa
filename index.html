@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+
+
+<body>
+
+<div id="map" style="height: 600px"></div>
+
+<script>
+var map = L.map('map').setView([13.7563, 100.5018], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var greenIcon = L.icon({
+iconUrl: 'pngegg.png',
+iconSize:     [30, 30], // size of the icon
+iconAnchor:   [45, 45], // point of the icon which will correspond to marker's location
+popupAnchor:  [0, -39] // point from which the popup should open relative to the iconAnchor		
+});
+
+
+L.marker([13.86498, 100.70313],{icon:greenIcon}).addTo(map).bindPopup("<b>ซาฟารีเวิลด์</b><br>แขวงสามวาตะวันตก, เขตคลองสามวา, กรุงเทพมหานคร<br>");
+L.marker([13.73881, 100.53739],{icon:greenIcon}).addTo(map).bindPopup("<b>ราชกรีฑาสโมสร</b><br>แขวงปทุมวัน, เขตปทุมวัน, กรุงเทพมหานคร<br>");
+L.marker([13.74066, 100.51703],{icon:greenIcon}).addTo(map).bindPopup("<b>สถานีรถไฟกรุงเทพ</b><br>หัวลำโพง, แขวงรองเมือง, เขตปทุมวัน, กรุงเทพมหานคร<br>");
+L.marker([13.76300, 100.46697],{icon:greenIcon}).addTo(map).bindPopup("<b>วัดเพลงวิปัสสนา</b><br>แขวงบางขุนศรี, เขตบางกอกน้อย, กรุงเทพมหานคร<br>");
+L.marker([13.80403, 100.54171],{icon:greenIcon}).addTo(map).bindPopup("<b>กรุงเทพอภิวัฒน์</b><br>แขวงจตุจักร, เขตจตุจักร, กรุงเทพมหานคร<br>");
+
+
+</script>
+
+</body>
+</html>
+
